@@ -24,23 +24,20 @@ module counter_4bit9(clk, clk_en, carry_out, Q);
 
     input       clk;
     input       clk_en;
-    output reg  carry_out;
+    output      carry_out;
     output reg  [3:0] Q;
     
     initial Q = 0;
-    initial carry_out = 0;
+   
+    assign carry_out = (Q == 9);
     
-    always @ (posedge clk) begin
-        if  ((Q != 9) && (clk_en == 1)) begin
-            Q = Q + 1;
-            carry_out = 0;
-        end else if (clk_en == 0) begin
-            Q = Q;
-            carry_out = 0;
-        end else if (Q == 9) begin
-            Q = 0;
-            carry_out = 1;
-        end
+    always @ (posedge clk)
+    begin
+    if (clk_en == 1)
+    begin
+      if (Q==9) Q = 0;
+      else Q = Q + 1;
+    end
     end
     
 endmodule

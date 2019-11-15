@@ -62,9 +62,9 @@ module top(clk100, sw1, sw2, sw3, led, seg, an);
     clken_gen       e2      (1,         eq59,       sw2,    clk_en2);
     clken_gen       e3      (cout2,     eq59,       sw3,    clk_en3);
     
-    //                        clk,       clk_en, carry_out,  Q
-    counter_0to9    c1      (clk1,      clk_en0,     cout1,  data0); //TO DO: Why does the cout increment from 0 > 1?
-    counter_0to9    c3      (clk1,      clk_en2,     cout2,  data2);
+    //                        clk,       clk_en,     carry_out,  Q
+    counter_0to9    c1      (clk1,      clk_en0,     cout1    ,  data0); //TO DO: Why does the cout increment from 0 > 1?
+    counter_0to9    c3      (clk1,      clk_en2,     cout2    ,  data2);
     
     //                        clk,       clk_en,     Q
     counter_0to5    c2      (clk1,      clk_en1,     data1); 
