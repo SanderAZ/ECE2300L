@@ -65,17 +65,17 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
+  set_param chipscope.maxJobs 1
   set_param xicom.use_bs_reader 1
   create_project -in_memory -part xc7a100tcsg324-1
-  set_property board_part digilentinc.com:nexys-a7-100t:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir /home/alpha/Documents/FPGA/Lab11/DigitalClock/DigitalClock.cache/wt [current_project]
-  set_property parent.project_path /home/alpha/Documents/FPGA/Lab11/DigitalClock/DigitalClock.xpr [current_project]
-  set_property ip_output_repo /home/alpha/Documents/FPGA/Lab11/DigitalClock/DigitalClock.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Users/Sander/Documents/GitHub/ECE2300L/Lab11/DigitalClock/DigitalClock.cache/wt [current_project]
+  set_property parent.project_path D:/Users/Sander/Documents/GitHub/ECE2300L/Lab11/DigitalClock/DigitalClock.xpr [current_project]
+  set_property ip_output_repo D:/Users/Sander/Documents/GitHub/ECE2300L/Lab11/DigitalClock/DigitalClock.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet /home/alpha/Documents/FPGA/Lab11/DigitalClock/DigitalClock.runs/synth_1/top.dcp
-  read_xdc /home/alpha/Documents/FPGA/Lab11/DigitalClock/DigitalClock.srcs/constrs_1/imports/DigitalClock/Nexys-A7-100T-MasterDigitalClock.xdc
+  add_files -quiet D:/Users/Sander/Documents/GitHub/ECE2300L/Lab11/DigitalClock/DigitalClock.runs/synth_1/top.dcp
+  read_xdc D:/Users/Sander/Documents/GitHub/ECE2300L/Lab11/DigitalClock/DigitalClock.srcs/constrs_1/imports/DigitalClock/Nexys-A7-100T-MasterDigitalClock.xdc
   link_design -top top -part xc7a100tcsg324-1
   close_msg_db -file init_design.pb
 } RESULT]

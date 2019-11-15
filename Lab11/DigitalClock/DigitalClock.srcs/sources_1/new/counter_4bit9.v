@@ -33,9 +33,10 @@ module counter_4bit9(clk, clk_en, carry_out, Q);
     always @ (posedge clk) begin
         if  ((Q != 9) && (clk_en == 1)) begin
             Q = Q + 1;
+            carry_out = 0;
         end else if (clk_en == 0) begin
             Q = Q;
-            carry_out = carry_out;
+            carry_out = 0;
         end else if (Q == 9) begin
             Q = 0;
             carry_out = 1;
