@@ -21,6 +21,7 @@
 
 
 module clock_gen400(clk_in, clk_out);
+//Intakes a clock of 100 MHz and outputs a clock of 400 HZ.
 
     input       clk_in;
     output reg  clk_out;
