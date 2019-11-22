@@ -22,7 +22,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-//Intakes a clock of 100 MHz and outputs a clock of 400 Hz.
+//Intakes a clock of 100 MHz and outputs a clock of 300 Hz.
 module clock_gen300(clk_in, clk_out);
 
     input       clk_in;
