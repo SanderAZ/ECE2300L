@@ -65,17 +65,16 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 2
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 1
   create_project -in_memory -part xc7a100tcsg324-3
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/sazuckerman/Desktop/Lab12/Lab12.cache/wt [current_project]
-  set_property parent.project_path C:/Users/sazuckerman/Desktop/Lab12/Lab12.xpr [current_project]
-  set_property ip_output_repo C:/Users/sazuckerman/Desktop/Lab12/Lab12.cache/ip [current_project]
+  set_property webtalk.parent_dir D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.cache/wt [current_project]
+  set_property parent.project_path D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.xpr [current_project]
+  set_property ip_output_repo D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
-  add_files -quiet C:/Users/sazuckerman/Desktop/Lab12/Lab12.runs/synth_1/top.dcp
-  read_xdc C:/Users/sazuckerman/Desktop/ShiftRegisters/Nexys-A7-100T-Master.xdc
+  add_files -quiet D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.runs/synth_1/top.dcp
+  read_xdc D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Nexys-A7-100T-Master.xdc
   link_design -top top -part xc7a100tcsg324-3
   close_msg_db -file init_design.pb
 } RESULT]

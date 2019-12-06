@@ -17,29 +17,27 @@ proc create_report { reportName command } {
     send_msg_id runtcl-5 warning "$msg"
   }
 }
-set_param chipscope.maxJobs 2
-set_param xicom.use_bs_reader 1
 create_project -in_memory -part xc7a100tcsg324-3
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/sazuckerman/Desktop/Lab12/Lab12.cache/wt [current_project]
-set_property parent.project_path C:/Users/sazuckerman/Desktop/Lab12/Lab12.xpr [current_project]
+set_property webtalk.parent_dir D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.cache/wt [current_project]
+set_property parent.project_path D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/sazuckerman/Desktop/Lab12/Lab12.cache/ip [current_project]
+set_property ip_output_repo d:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 read_verilog -library xil_defaultlib {
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/DFF.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/clock_gen1.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/clock_gen300.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/counter_3bit.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/decoder_3to8.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/mux_3to1.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/shift_register_4bit.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/shiftn.v
-  C:/Users/sazuckerman/Desktop/Lab12/Lab12.srcs/sources_1/new/top.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/DFF.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/clock_gen1.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/clock_gen300.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/counter_3bit.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/decoder_3to8.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/mux_3to1.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/shift_register_4bit.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/shiftn.v
+  D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Lab12.srcs/sources_1/new/top.v
 }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -49,8 +47,8 @@ read_verilog -library xil_defaultlib {
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/sazuckerman/Desktop/ShiftRegisters/Nexys-A7-100T-Master.xdc
-set_property used_in_implementation false [get_files C:/Users/sazuckerman/Desktop/ShiftRegisters/Nexys-A7-100T-Master.xdc]
+read_xdc D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Nexys-A7-100T-Master.xdc
+set_property used_in_implementation false [get_files D:/Users/Sander/Documents/GitHub/ECE2300L/Lab12/Nexys-A7-100T-Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
